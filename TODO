@@ -1,0 +1,17 @@
+
+1. JS
+ - load scripts from node_modules
+ - load custom scripts from resource folder
+ - have custom scripts for each page like index.js, products.js, etc.
+ - load modules with requirejs or browserifyjs in these custom scripts
+ - end point js to be minified if env is production
+ - custom js outside node_modules to go through jshint/jslint
+ - generate sourcemaps
+
+2. CSS
+ - compile custom sass
+ - concat custom css
+ - load css from node_modules
+ - end point css to be minified if env is production
+ - make sourcemaps
+ - output errors in console
