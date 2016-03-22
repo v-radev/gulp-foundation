@@ -8,6 +8,14 @@
  - custom js outside node_modules to go through jshint/jslint
  - generate sourcemaps
 
+ https://www.viget.com/articles/gulp-browserify-starter-faq
+ https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-transforms.md
+ https://wehavefaces.net/gulp-browserify-the-gulp-y-way-bb359b3f9623#.44yrfu8xl
+ https://lincolnloop.com/blog/untangle-your-javascript-browserify/
+ http://fettblog.eu/gulp-browserify-multiple-bundles/
+ https://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
+ http://www.sitepoint.com/getting-started-browserify/
+
 2. CSS
  - compile custom sass
  - concat custom css
