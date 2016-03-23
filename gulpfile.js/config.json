@@ -1,7 +1,7 @@
 {
   "root": {
-    "src": "./source",
-    "dest": "./public"
+    "source": "./source",
+    "destination": "./public"
   },
 
   "tasks": {
@@ -29,8 +29,8 @@
     },
 
     "images": {
-      "src": "images",
-      "dest": "images",
+      "source": "images",
+      "destination": "images",
       "extensions": ["jpg", "png", "svg", "gif"]
     }
   }

@@ -4,8 +4,8 @@ var config = require('../config');
 
 var cleanTask = function() {
     return gulp.src([
-        config.root.dest + '/**/*.js',
-        config.root.dest + '/**/*.css'
+        config.root.destination + '/**/*.js',
+        config.root.destination + '/**/*.css'
     ], {read: false})
         .pipe(clean());
 };
