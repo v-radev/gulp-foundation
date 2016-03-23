@@ -1,11 +1,16 @@
-//TODO
 var gulp            = require('gulp');
 var gulpSequence    = require('gulp-sequence');
-var getEnabledTasks = require('../lib/getEnabledTasks');
+var getEnabledTasks = require('../library/enabledTasks');
 
-var defaultTask = function(cb) {
-  var tasks = getEnabledTasks('watch');
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'watch', cb);
+gulp.task('mytask', function() {
+   console.log( 'EXECUTING "mystask"' );//TODO
+});
+
+var defaultTask = function ( cb ) {
+    var tasks = getEnabledTasks();
+
+    //gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'watch', cb);
+    gulpSequence('clean', 'mytask', cb);
 };
 
 gulp.task('default', defaultTask);
