@@ -1,19 +1,20 @@
 
-//TODO watch task
+//TODO
+1. js task as described below
+2. watch task
+3. css task as described below
+4. browser sync
+5. minify and uglify stuff only for production - make environment param somehow
 
 
 1. JS
  - load scripts from node_modules
- - load custom scripts from resource folder
- - have custom scripts for each page like index.js, products.js, etc.
- - load modules with requirejs or browserifyjs in these custom scripts
+ + load custom scripts from resource folder
+ + have custom scripts for each page like index.js, products.js, etc.
  - end point js to be minified if env is production
  - custom js outside node_modules to go through jshint/jslint
  - generate sourcemaps
 
- https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-transforms.md
- https://wehavefaces.net/gulp-browserify-the-gulp-y-way-bb359b3f9623#.44yrfu8xl
- https://lincolnloop.com/blog/untangle-your-javascript-browserify/
  http://fettblog.eu/gulp-browserify-multiple-bundles/
  https://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
  http://www.sitepoint.com/getting-started-browserify/

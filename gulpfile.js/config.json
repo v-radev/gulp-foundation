@@ -6,19 +6,14 @@
 
   "tasks": {
     "js": {
-      "src": "javascripts",
-      "dest": "javascripts",
-      "extractSharedJs": true,
-      "entries": {
-        "app": ["./app.js"],
-        "page": ["./page.js"]
-      },
+      "source": "js",
+      "destination": "js",
       "extensions": ["js"]
     },
 
     "css": {
-      "src": "stylesheets",
-      "dest": "stylesheets",
+      "source": "stylesheets",
+      "destination": "stylesheets",
       "autoprefixer": {
         "browsers": ["last 3 version"]
       },
