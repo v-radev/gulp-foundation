@@ -9,6 +9,8 @@ var browserify  = require('gulp-browserify');
 var uglify      = require('gulp-uglify');
 var browserSync = require('browser-sync');
 var path        = require('path');
+var jshint      = require('gulp-jshint');
+var stylish     = require('jshint-stylish');
 
 var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/**/*.js' ),
@@ -17,6 +19,8 @@ var paths = {
 
 var jsTask = function() {
     return gulp.src( paths.source )
+        .pipe( jshint() )
+        .pipe( jshint.reporter(stylish) )
         .pipe( browserify() )
         //.pipe( uglify() )//TODO for production only
         .pipe( gulp.dest( paths.destination ) )

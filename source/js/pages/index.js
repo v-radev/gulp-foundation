@@ -1,5 +1,5 @@
-var spectrum = require('spectrum-colorpicker');
-var logDate    = require('../modules/logDate');
+var slim    = require('../../../node_modules/jquery-slimscroll/jquery.slimscroll.js');
+var logDate = require('../modules/logDate');
 
 $(document).ready(function(){
     logDate();
