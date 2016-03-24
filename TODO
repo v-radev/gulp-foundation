@@ -16,6 +16,7 @@
  - end point js to be minified if env is production
  + custom js outside node_modules to go through jshint/jslint
  - generate sourcemaps
+ - the js compile should not have /modules folder in public
 
  http://fettblog.eu/gulp-browserify-multiple-bundles/
  https://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/

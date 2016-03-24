@@ -16,3 +16,5 @@ public/js/*
 public/images/*
 
 !public/*/.gitkeep
+
+index.html

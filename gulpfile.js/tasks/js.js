@@ -11,6 +11,7 @@ var browserSync = require('browser-sync');
 var path        = require('path');
 var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
+var sourcemaps  = require('gulp-sourcemaps');
 
 var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/**/*.js' ),
@@ -19,10 +20,12 @@ var paths = {
 
 var jsTask = function() {
     return gulp.src( paths.source )
+        .pipe( sourcemaps.init() )
         .pipe( jshint() )
         .pipe( jshint.reporter(stylish) )
         .pipe( browserify() )
         //.pipe( uglify() )//TODO for production only
+        .pipe( sourcemaps.write() )
         .pipe( gulp.dest( paths.destination ) )
         .pipe( browserSync.stream() );
 };
