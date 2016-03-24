@@ -33,5 +33,6 @@
       "destination": "images",
       "extensions": ["jpg", "png", "svg", "gif"]
     }
-  }
+  },
+  "watchableTasks": ["css", "js"]
 }

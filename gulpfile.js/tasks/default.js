@@ -9,8 +9,8 @@ gulp.task('mytask', function() {
 var defaultTask = function ( cb ) {
     var tasks = getEnabledTasks();
 
-    //gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'static', 'watch', cb);
     gulpSequence('clean', 'mytask', tasks.assetTasks, cb);
+    //gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, 'watch', cb);
 };
 
 gulp.task('default', defaultTask);

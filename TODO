@@ -1,4 +1,7 @@
 
+//TODO watch task
+
+
 1. JS
  - load scripts from node_modules
  - load custom scripts from resource folder
@@ -8,13 +11,13 @@
  - custom js outside node_modules to go through jshint/jslint
  - generate sourcemaps
 
- https://www.viget.com/articles/gulp-browserify-starter-faq
  https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-transforms.md
  https://wehavefaces.net/gulp-browserify-the-gulp-y-way-bb359b3f9623#.44yrfu8xl
  https://lincolnloop.com/blog/untangle-your-javascript-browserify/
  http://fettblog.eu/gulp-browserify-multiple-bundles/
  https://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
  http://www.sitepoint.com/getting-started-browserify/
+ https://github.com/vigetlabs/gulp-starter/tree/master/gulpfile.js/tasks
 
  https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js
  http://www.sitepoint.com/introduction-gulp-js/
