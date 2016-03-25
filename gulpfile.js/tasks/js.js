@@ -14,7 +14,7 @@ var stylish     = require('jshint-stylish');
 var sourcemaps  = require('gulp-sourcemaps');
 
 var paths = {
-    source: path.join( config.root.source, config.tasks.js.source, '/**/*.js' ),
+    source: path.join( config.root.source, config.tasks.js.source, '/*.js' ),
     destination: path.join( config.root.destination, config.tasks.js.destination )
 };
 
