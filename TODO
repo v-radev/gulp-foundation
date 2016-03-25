@@ -7,13 +7,14 @@
     - https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development
     - https://www.browsersync.io/docs/gulp/
 5. minify and uglify stuff only for production - make environment param somehow
+6. notify when separate tasks are done
 
 
 1. JS
  + load scripts from node_modules
  + load custom scripts from resource folder
  + have custom scripts for each page like index.js, products.js, etc.
- - end point js to be minified if env is production
+ + end point js to be minified if env is production
  + custom js outside node_modules to go through jshint/jslint
  + generate sourcemaps
 
