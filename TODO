@@ -1,13 +1,11 @@
 
 //TODO
-1. js task as described below
-2. watch task
-3. css task as described below
-4. browser sync
+1. watch task
+2. css task as described below
+3. browser sync
     - https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development
     - https://www.browsersync.io/docs/gulp/
-5. minify and uglify stuff only for production - make environment param somehow
-6. notify when separate tasks are done
+4. notify when separate tasks are done
 
 
 1. JS
@@ -18,15 +16,8 @@
  + custom js outside node_modules to go through jshint/jslint
  + generate sourcemaps
 
- http://fettblog.eu/gulp-browserify-multiple-bundles/
- https://justinjohnson.org/javascript/getting-started-with-gulp-and-browserify/
- http://www.sitepoint.com/getting-started-browserify/
  https://github.com/vigetlabs/gulp-starter/tree/master/gulpfile.js/tasks
-
- https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js
- http://www.sitepoint.com/introduction-gulp-js/
- https://css-tricks.com/gulp-for-beginners/
- http://code.tutsplus.com/tutorials/search?utf8=%E2%9C%93&search[terms]=gulp&button=
+ https://www.npmjs.com/package/watchify
 
 2. CSS
  - compile custom sass

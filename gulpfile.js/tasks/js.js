@@ -24,6 +24,7 @@ var jsTask = function() {
         .pipe( sourcemaps.init() )
         .pipe( jshint() )
         .pipe( jshint.reporter(stylish) )
+        .pipe( jshint.reporter('fail') )
         .pipe( browserify() )
         .pipe( gulpUtil.env.env === 'production' ? uglify() : gulpUtil.noop() )
         .pipe( sourcemaps.write() )
