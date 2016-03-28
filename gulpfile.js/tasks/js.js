@@ -13,6 +13,7 @@ var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
 var sourcemaps  = require('gulp-sourcemaps');
 var gulpUtil    = require('gulp-util');
+var env         = gulpUtil.env.env;
 
 var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/*.js' ),
@@ -21,15 +22,15 @@ var paths = {
 
 var jsTask = function() {
     return gulp.src( paths.source )
-        .pipe( sourcemaps.init() )
+        .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.init() )
         .pipe( jshint() )
         .pipe( jshint.reporter(stylish) )
         .pipe( jshint.reporter('fail') )
         .pipe( browserify() )
-        .pipe( gulpUtil.env.env === 'production' ? uglify() : gulpUtil.noop() )
-        .pipe( sourcemaps.write() )
+        .pipe( env === 'production' ? uglify() : gulpUtil.noop() )
+        .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.write() )
         .pipe( gulp.dest( paths.destination ) )
-        .pipe( gulpUtil.env.env === 'production' ? gulpUtil.noop() : browserSync.stream() );
+        .pipe( env === 'production' ? gulpUtil.noop() : browserSync.stream() );
 };
 
 gulp.task('js', jsTask);

@@ -4,6 +4,7 @@
 2. browser sync
     - https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development
     - https://www.browsersync.io/docs/gulp/
+3. search todos
 
 
 1. JS
@@ -17,9 +18,9 @@
  https://github.com/vigetlabs/gulp-starter/tree/master/gulpfile.js/tasks
 
 2. CSS
- - compile custom sass
+ + compile custom sass
  - concat custom css
  - load css from node_modules
  - end point css to be minified if env is production
- - make sourcemaps
- - output errors in console
+ + make sourcemaps
+ + output errors in console

@@ -1,6 +1,6 @@
 var config = require('../config');
 
-var assetTasks = ['images'];
+var assetTasks = ['css', 'images'];
 var codeTasks = ['js'];
 
 module.exports = function() {

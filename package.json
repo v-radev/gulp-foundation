@@ -19,7 +19,8 @@
     "gulp-sourcemaps": "~1.6.0",
     "gulp-util": "~3.0.7",
     "gulp-watch": "~4.3.5",
-    "node-notifier": "~4.5.0"
+    "node-notifier": "~4.5.0",
+    "gulp-sass": "~2.2.0"
   },
   "dependencies": {
     "spectrum-colorpicker": "~1.8.0",

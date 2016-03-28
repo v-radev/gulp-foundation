@@ -12,14 +12,8 @@
     },
 
     "css": {
-      "source": "stylesheets",
-      "destination": "stylesheets",
-      "autoprefixer": {
-        "browsers": ["last 3 version"]
-      },
-      "sass": {
-        "indentedSyntax": true
-      },
+      "source": "css",
+      "destination": "css",
       "extensions": ["sass", "scss", "css"]
     },
 
@@ -29,5 +23,5 @@
       "extensions": ["jpg", "png", "svg", "gif"]
     }
   },
-  "watchableTasks": ["js"]
+  "watchableTasks": ["css", "js"]
 }
