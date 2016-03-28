@@ -29,5 +29,5 @@
       "extensions": ["jpg", "png", "svg", "gif"]
     }
   },
-  "watchableTasks": ["css", "js"]
+  "watchableTasks": ["js"]
 }

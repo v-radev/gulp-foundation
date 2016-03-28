@@ -1,11 +1,9 @@
 
 //TODO
-1. watch task
-2. css task as described below
-3. browser sync
+1. css task as described below
+2. browser sync
     - https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development
     - https://www.browsersync.io/docs/gulp/
-4. notify when separate tasks are done
 
 
 1. JS
@@ -17,7 +15,6 @@
  + generate sourcemaps
 
  https://github.com/vigetlabs/gulp-starter/tree/master/gulpfile.js/tasks
- https://www.npmjs.com/package/watchify
 
 2. CSS
  - compile custom sass
