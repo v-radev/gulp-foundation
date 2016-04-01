@@ -1,26 +1,6 @@
 
 //TODO
-1. css task as described below
-2. browser sync
+1. browser sync
     - https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development
     - https://www.browsersync.io/docs/gulp/
-3. search todos
-
-
-1. JS
- + load scripts from node_modules
- + load custom scripts from resource folder
- + have custom scripts for each page like index.js, products.js, etc.
- + end point js to be minified if env is production
- + custom js outside node_modules to go through jshint/jslint
- + generate sourcemaps
-
- https://github.com/vigetlabs/gulp-starter/tree/master/gulpfile.js/tasks
-
-2. CSS
- + compile custom sass
- - concat custom css
- - load css from node_modules
- - end point css to be minified if env is production
- + make sourcemaps
- + output errors in console
+2. search todos

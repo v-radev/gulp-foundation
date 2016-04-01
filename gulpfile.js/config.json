@@ -14,6 +14,10 @@
     "css": {
       "source": "css",
       "destination": "css",
+      "modules": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "node_modules/spectrum-colorpicker/spectrum.css"
+      ],
       "extensions": ["sass", "scss", "css"]
     },
 

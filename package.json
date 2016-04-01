@@ -20,7 +20,9 @@
     "gulp-util": "~3.0.7",
     "gulp-watch": "~4.3.5",
     "node-notifier": "~4.5.0",
-    "gulp-sass": "~2.2.0"
+    "gulp-sass": "~2.2.0",
+    "gulp-concat-css": "~2.2.0",
+    "gulp-cssmin": "~0.1.7"
   },
   "dependencies": {
     "spectrum-colorpicker": "~1.8.0",
