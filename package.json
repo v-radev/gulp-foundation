@@ -1,7 +1,7 @@
 {
   "name": "fe-starter-skeleton",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Starter gulp project with basic tasks.",
   "devDependencies": {
     "gulp": "~3.9.1",
     "require-dir": "~0.3.0",

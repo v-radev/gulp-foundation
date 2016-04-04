@@ -25,6 +25,10 @@
       "source": "images",
       "destination": "images",
       "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
+    "browserSync": {
+      "proxy": "gulp-foundation.dev"
     }
   },
   "watchableTasks": ["css", "js"]
