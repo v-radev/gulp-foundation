@@ -1,6 +1,6 @@
-var gulpUtil = require('gulp-util');
-var env      = gulpUtil.env.env;
-var gulp     = require('gulp');
+var gulpUtil    = require('gulp-util');
+var env         = gulpUtil.env.env;
+var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var config      = require('../config');
 
