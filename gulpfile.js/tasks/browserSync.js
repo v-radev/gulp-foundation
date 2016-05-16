@@ -1,13 +1,14 @@
 var gulpUtil = require('gulp-util');
 var env      = gulpUtil.env.env;
+var gulp     = require('gulp');
+var browserSync = require('browser-sync');
+var config      = require('../config');
 
 if( env === 'production' ) {
+    module.exports = function(){ };
+    gulp.task('browserSync', function(){ });
     return;
 }
-
-var browserSync = require('browser-sync');
-var gulp        = require('gulp');
-var config      = require('../config');
 
 var browserSyncTask = function() {
 

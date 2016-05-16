@@ -3,6 +3,14 @@ var gulp     = require('gulp');
 var path     = require('path');
 var watch    = require('gulp-watch');
 var notifier = require('node-notifier');
+var gulpUtil = require('gulp-util');
+var env      = gulpUtil.env.env;
+
+if( env === 'production' ) {
+    module.exports = function(){ };
+    gulp.task('watch', function(){ });
+    return;
+}
 
 var watchTask = function() {
     config.watchableTasks.forEach(function(taskName) {
