@@ -29,6 +29,12 @@
 
     "browserSync": {
       "proxy": "gulp-foundation.dev"
+    },
+
+    "copy": {
+      "files": [
+        { "source": "./node_modules/bootstrap/dist/css/bootstrap.min.css", "destination": "./public/css/" }
+      ]
     }
   },
   "watchableTasks": ["css", "js"]
