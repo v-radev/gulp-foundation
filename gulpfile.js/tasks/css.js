@@ -9,7 +9,6 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var sourcemaps  = require('gulp-sourcemaps');
 var path        = require('path');
-var concat      = require('gulp-concat-css');
 var gulpUtil    = require('gulp-util');
 var env         = gulpUtil.env.env;
 var cssmin      = require('gulp-cssmin');
@@ -27,7 +26,6 @@ var cssTask = function () {
     return gulp.src( cssSource )
         .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.init() )
         .pipe( sass().on('error', sass.logError) )
-        .pipe( concat('style.css') )
         .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.write('./') )
         .pipe( env === 'production' ? cssmin() : gulpUtil.noop() )
         .pipe( gulp.dest( paths.destination ) )
