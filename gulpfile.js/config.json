@@ -15,8 +15,7 @@
       "source": "css",
       "destination": "css",
       "modules": [
-        "node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "node_modules/spectrum-colorpicker/spectrum.css"
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
       "extensions": ["sass", "scss", "css"]
     },
@@ -28,7 +27,7 @@
     },
 
     "browserSync": {
-      "proxy": "gulp-foundation.dev"
+      "proxy": "gulp-foundation.lc"
     },
 
     "copy": {

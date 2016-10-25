@@ -5,7 +5,6 @@ if( !config.tasks.js ) {
 }
 
 var gulp        = require('gulp');
-var browserify  = require('gulp-browserify');
 var uglify      = require('gulp-uglify');
 var browserSync = require('browser-sync');
 var path        = require('path');
@@ -13,24 +12,49 @@ var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
 var sourcemaps  = require('gulp-sourcemaps');
 var gulpUtil    = require('gulp-util');
+var plumber     = require('gulp-plumber');
+var webpack     = require('webpack-stream');
+var glob        = require('glob');
 var env         = gulpUtil.env.env;
+var hint        = gulpUtil.env.hint;
 
 var paths = {
-    source: path.join( config.root.source, config.tasks.js.source, '/*.js' ),
+    source: path.join( config.root.source, config.tasks.js.source, '/*/*.js' ),
     destination: path.join( config.root.destination, config.tasks.js.destination )
 };
 
+//TODO sourcemaps
+//TODO plumber
+
 var jsTask = function() {
-    return gulp.src( paths.source )
-        .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.init() )
-        .pipe( jshint() )
-        .pipe( jshint.reporter(stylish) )
-        .pipe( jshint.reporter('fail') )
-        .pipe( browserify() )
-        .pipe( env === 'production' ? uglify() : gulpUtil.noop() )
-        .pipe( env === 'production' ? gulpUtil.noop() : sourcemaps.write() )
-        .pipe( gulp.dest( paths.destination ) )
-        .pipe( env === 'production' ? gulpUtil.noop() : browserSync.stream() );
+  var files = glob.sync(paths.source);
+  var entries = {};
+  var webpackOptions;
+
+  files.map(function(file){
+    var foldersArray = file.split('/').reverse();
+    var outputFolderName = foldersArray[1];
+    var key = outputFolderName + '/' + file.substr(file.lastIndexOf('/') + 1);
+
+    entries[key] = './' + file;
+  });
+
+  webpackOptions = {
+    entry: entries,
+    output: {
+      path: path.join(__dirname, 'public/js'),
+      filename: '[name]'
+    }
+  };
+
+  return gulp.src( paths.source )
+    .pipe( jshint() )
+    .pipe( hint === 'false' ? gulpUtil.noop() : jshint.reporter(stylish) )
+    .pipe( hint === 'false' ? gulpUtil.noop() : jshint.reporter('fail') )
+    .pipe( webpack(webpackOptions) )
+    .pipe( env === 'production' ? uglify() : gulpUtil.noop() )
+    .pipe( gulp.dest( paths.destination ) )
+    .pipe( env === 'production' ? gulpUtil.noop() : browserSync.stream() );
 };
 
 gulp.task('js', jsTask);
