@@ -10,7 +10,6 @@ var browserSync = require('browser-sync');
 var path        = require('path');
 var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
-var sourcemaps  = require('gulp-sourcemaps');
 var gulpUtil    = require('gulp-util');
 var plumber     = require('gulp-plumber');
 var webpack     = require('webpack-stream');
@@ -22,9 +21,6 @@ var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/*/*.js' ),
     destination: path.join( config.root.destination, config.tasks.js.destination )
 };
-
-//TODO sourcemaps
-//TODO plumber
 
 var jsTask = function() {
   var files = glob.sync(paths.source);
@@ -44,10 +40,12 @@ var jsTask = function() {
     output: {
       path: path.join(__dirname, 'public/js'),
       filename: '[name]'
-    }
+    },
+    devtool: "#source-map"
   };
 
   return gulp.src( paths.source )
+    .pipe( plumber() )
     .pipe( jshint() )
     .pipe( hint === 'false' ? gulpUtil.noop() : jshint.reporter(stylish) )
     .pipe( hint === 'false' ? gulpUtil.noop() : jshint.reporter('fail') )
