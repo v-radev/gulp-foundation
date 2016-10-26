@@ -1,7 +1,10 @@
 var jQuery = $ = require('jquery');
-var slim    = require('../../node_modules/jquery-slimscroll/jquery.slimscroll.js');
+window.jQuery = jQuery;
+window.$ = jQuery;
 var logLorem = require('./modules/logLorem');
+var logAmet = require('../global/common/logAmet');
 
 $(document).ready(function(){
   logLorem();
+  logAmet();
 });
