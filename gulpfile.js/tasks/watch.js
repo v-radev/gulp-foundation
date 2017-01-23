@@ -19,8 +19,10 @@ var watchTask = function() {
         if( task ) {
             glob = path.join(config.root.source, task.source, '**/*.{' + task.extensions.join(',') + '}');
             watch(glob, function() {
-                require('./' + taskName)();
-                notifier.notify({ title: "WATCHER", message: "Compiled '" + taskName + "' task."});
+                if ( taskName != 'js' ){
+                  require('./' + taskName)();
+                  notifier.notify({ title: "WATCHER", message: "Task '" + taskName + "' has started."});
+                }
             });
         }
     });

@@ -16,6 +16,7 @@ var webpack     = require('webpack-stream');
 var glob        = require('glob');
 var env         = gulpUtil.env.env;
 var hint        = gulpUtil.env.hint;
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/*/*.js' ),
@@ -41,7 +42,15 @@ var jsTask = function() {
       path: path.join(__dirname, 'public/js'),
       filename: '[name]'
     },
-    devtool: "#source-map"
+    devtool: "#source-map",
+    watch: true,
+    plugins: [
+      new BrowserSyncPlugin({
+        host: 'localhost',
+        port: 3000,
+        proxy: config.tasks.browserSync.proxy
+      })
+    ]
   };
 
   return gulp.src( paths.source )
