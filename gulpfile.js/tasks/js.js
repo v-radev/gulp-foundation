@@ -16,7 +16,10 @@ var webpack     = require('webpack-stream');
 var glob        = require('glob');
 var env         = gulpUtil.env.env;
 var hint        = gulpUtil.env.hint;
+var sync        = gulpUtil.env.sync;
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var webpackPlugins = [];
+var browserSyncPlugin;
 
 var paths = {
     source: path.join( config.root.source, config.tasks.js.source, '/*/*.js' ),
@@ -35,6 +38,16 @@ var jsTask = function() {
 
     entries[key] = './' + file;
   });
+  
+  browserSyncPlugin = new BrowserSyncPlugin({
+    host: 'localhost',
+    port: 3000,
+    proxy: config.tasks.browserSync.proxy
+  });
+
+  if ( sync !== 'false' ){
+    webpackPlugins.push(browserSyncPlugin);
+  }
 
   webpackOptions = {
     entry: entries,
@@ -43,14 +56,8 @@ var jsTask = function() {
       filename: '[name]'
     },
     devtool: "#source-map",
-    watch: true,
-    plugins: [
-      new BrowserSyncPlugin({
-        host: 'localhost',
-        port: 3000,
-        proxy: config.tasks.browserSync.proxy
-      })
-    ]
+    watch: env === 'production' ? false : true,
+    plugins: webpackPlugins
   };
 
   return gulp.src( paths.source )
