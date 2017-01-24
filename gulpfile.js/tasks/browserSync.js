@@ -18,9 +18,7 @@ if( sync === 'false' ) {
 }
 
 var browserSyncTask = function() {
-
     browserSync.init(config.tasks.browserSync);
-
 };
 
 gulp.task('browserSync', browserSyncTask);
