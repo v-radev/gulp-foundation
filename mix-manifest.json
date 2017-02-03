@@ -1,0 +1,6 @@
+{
+  "public/js/front/front.home.js": "public/js/front/front.home.js",
+  "public/js/admin/admin.home.js": "public/js/admin/admin.home.js",
+  "public/js/front/front.contact.js": "public/js/front/front.contact.js",
+  "public/js/admin/admin.users.js": "public/js/admin/admin.users.js"
+}

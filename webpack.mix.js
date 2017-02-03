@@ -1,31 +1,17 @@
+"use strict";
 let mix = require('laravel-mix');
+let path = require('path');
+let config = require('./config');
+let glob = require('glob');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
- |
- */
+let sourceJS = path.join( config.root.source, config.tasks.js.source, '/*/*.js' );
+let destinationJS = path.join( config.root.destination, config.tasks.js.destination ) + '/';
+let JS = glob.sync(sourceJS);
 
-mix.js('src/app.js', 'dist/')
-   .sass('src/app.scss', 'dist/');
+JS.map(function(file){
+    let foldersArray = file.split('/').reverse();
+    let outputFolderName = foldersArray[1];
+    let outputFile = outputFolderName + '/' + file.substr(file.lastIndexOf('/') + 1);
 
-// Full API
-// mix.js(src, output);
-// mix.extract(vendorLibs);
-// mix.sass(src, output);
-// mix.less(src, output);
-// mix.combine(files, destination);
-// mix.copy(from, to);
-// mix.minify(file);
-// mix.sourceMaps(); // Enable sourcemaps
-// mix.version(); // Enable versioning.
-// mix.disableNotifications();
-// mix.setPublicPath('path/to/public');
-// mix.autoload({}); <-- Will be passed to Webpack's ProvidePlugin.
-// mix.webpackConfig({}); <-- Override webpack.config.js, without editing the file directly.
-// mix.then(function () {}) <-- Will be triggered each time Webpack finishes building.
+    mix.js(file, destinationJS + outputFile);
+});

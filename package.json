@@ -1,7 +1,7 @@
 {
   "name": "fe-starter-skeleton",
   "version": "1.0.0",
-  "description": "Starter gulp project with basic tasks.",
+  "description": "Starter laravel-mix project.",
   "devDependencies": {
     "laravel-mix": "^0.6.0"
   },
@@ -9,5 +9,12 @@
     "spectrum-colorpicker": "~1.8.0",
     "bootstrap": "~3.3.6",
     "jquery": "~2.2.2"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=development webpack",
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   }
 }

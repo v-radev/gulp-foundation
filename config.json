@@ -1,0 +1,18 @@
+{
+  "root": {
+    "source": "./source",
+    "destination": "./public"
+  },
+
+  "tasks": {
+    "js": {
+      "source": "js",
+      "destination": "js"
+    },
+
+    "css": {
+      "source": "css",
+      "destination": "css"
+    }
+  }
+}
